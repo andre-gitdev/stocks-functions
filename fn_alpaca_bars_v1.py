@@ -43,7 +43,7 @@ iterations = range(5) # <<< set number of loops
 
 # - ALPACA API Documentation: https://docs.alpaca.markets/reference/stockbars-1
 
-def fn_alpaca_barsV1( holdings, time_frame, start_date, end_date, limit,adj, feed, next_page_token, sort, iterations, headers, base_url, show_final=None):
+def fn_alpaca_bars_v1( holdings, time_frame, start_date, end_date, limit,adj, feed, next_page_token, sort, iterations, headers, base_url, show_final=None):
     
     print('''ReadMe: ''')
     print('''Robin$tocks API Docs: https://robin-stocks.readthedocs.io/en/latest/robinhood.html''')

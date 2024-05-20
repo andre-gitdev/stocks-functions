@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# bigquery_upload.py
 
 from google.cloud import bigquery
 import pandas as pd

@@ -27,7 +27,7 @@ end_date = '2024-04-29'
 limit = 10000 # <<< max number of datapoints; next page token will generate if limit is exceeded for another call
 adj = 'raw' # <<< corporate action adjustment; can be raw, split, dividend, or all 
 feed = 'sip' # <<< the source feed of the data. "sip' contains all US exchanges, 'iex' contains only the Investors Exchange; 'otc' contains over the counter exchanges
-next_page_token = '' # <<< copy paste token or comment out
+next_page_token = '' # <<< copy paste specific token or comment out
 sort = 'asc'
 '''
 '''
@@ -126,7 +126,7 @@ def fn_alpaca_barsV1( holdings, time_frame, start_date, end_date, limit,adj, fee
     #holdings_data = r.account.build_holdings()
     holdings_df = pd.DataFrame(holdings).transpose()
     
-    ## - rename the 'index' column to 'symbol'; dont run more than once otherwise there will be more than one symbol column
+    ## - rename the 'index' column to 'symbol'; don't run more than once otherwise there will be more than one symbol column
     holdings_df = holdings_df.reset_index().rename(columns={'index': 'symbol'})
     holdings_df.info()
     
@@ -153,7 +153,6 @@ def fn_alpaca_barsV1( holdings, time_frame, start_date, end_date, limit,adj, fee
     #-------------------------------------------------------------------------------------------------------
     
     for i in iterations:
-        j = (i + 1)
         if i < 1:
 
             print(next_page_token)
